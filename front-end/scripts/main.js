@@ -1,8 +1,11 @@
 function operate(operator) {
-	var num1 = document.querySelector('#num-1').value;
-	var num2 = document.querySelector('#num-2').value;
-	resultLambda = operator(num1, num2);
+	resultLambda = operator();
 	resultLambda(result => {
-		document.querySelector('#output').innerText = result;
+		console.log(result)
+		resultList="";
+		for(var i=0;i<result.length;i++){
+			resultList+="<li><p>"+result[i]+"</p></li>";
+		}
+		document.querySelector('#output').innerHTML = resultList;
 	});
 }
